@@ -1,0 +1,147 @@
+// Autor: David Soler Flores
+// Codi UdG: u6106247
+
+// Aquest fitxer és exclusivament per comentar i justificar detalls concrets del programa en general i les seves classes.
+// Per veure com funciona has de llegir "Instruccions.txt" 
+
+
+            *Origen del projecte*
+
+Ara que comença el segon semestre, hem d'escullir grups de teoria, pràctiques i problemes de les assignatures que tenim. 
+Com que he de repetir fisica i Electrònica, escullir uns grups que em quadrin per poder anar a totes les classes possibles 
+se m'ha complicat una mica. 
+
+És per això que he volgut fer un programa que em busqui una solució per poder assistir a les classes.
+Ho podia haver plantejat amb Voraç o BackTracking, però tinc dos raons (una més òbvia): 
+
+- El Voraç no em trobaria la millor solució (i dubto que trobi alguna): Aniria posant classes la primera opció que trobi i els 
+    solapaments apareixerien de tres en tres.
+- La segona raó és més personal. Prefereixo BackTracking. A més, puc explorar totes les solucions per si vull comparar quina em convé més.
+
+
+
+            *Massa personalització*
+
+El programa el vaig fer per a mi, afegint constants de les assignatures, com el nom o la posició directament a "Constants.h"
+En l'acceptable, directament mirava: "if (assignatura_actual == "FISICA" and classe_actual == "pràctiques){...} per mirar si 
+quadrava el grup de pràctiques. 
+
+Si havia alguna altra assignatura que també tingués restriccions de grup, havia d'afegir més ifs. 
+O si l'any que ve vull trobar els grups d'aquell any, hauria de modificar constants i molt de codi que m'hagués estat massa temps.
+
+I personalment, he de dir que ser tan poc genèric no m'agrada. Vull que el programa s'adapti a les necessitats de l'usuari, no al revés.
+
+El meu programa amb constants i personalitzat funcionava i em va trobar suficients combinacions. Les vaig escullir i després m'he dedicat
+a optimitzar-ho. 
+
+            *Justificacions*
+
+--- Per què mostrar les solucions i no guardar-les en un vector?
+
+He volgut que directament mostrés les solucions. 
+Abans no era aixi. Les guardava en una llista i després les mostrava. 
+Aixi em puc estalviar un for per totes les solucions. 
+
+Però el motiu amb més pes és que, en una de les primeres execucions, el programa em petava per un error de memòria. 
+I malgrat que no fos el motiu de l'error, vaig pensar que guardar milers de solucions potser podia arribar a fer bad alloc.
+Per això vaig decidir mostrar-les directament. 
+
+--- Per què tantes classes? (Horari, Dia...etc)
+
+Una de les condicions que em posava a mi mateix era l'eficiència de les coses. 
+Volia que l'acceptable, l'anotar i el desanotar fossin relativament eficients (dintre del possible)
+
+Han set petits detalls. 
+
+L'horari l'he separat en Dies perquè podia saber si una classe anava a un dia o un altre. 
+
+Si només era una setmana, només mirava aquella setmana. Si eren de les dues, per força havia de mirar les dues. 
+D'aqui ve el vector<Dia> a "Horari.h"
+
+També era més còmode per a mi. Treballar amb classes i els seus mètodes m'han simplificat moltíssim la programació.
+
+--- Què és el map<string, int> de "Solucio.h"?
+
+Una de les coses que més confusió pot causar és el map<string, int> de "Solucio.h":
+
+Quan havia d'indicar les restriccions, podia fer-ho de diverses formes. 
+La òptima hauria sigut indicar amb un numero l'assignatura de les restriccions i el tipus de classe al final del fitxer.
+Per tenir accés constant amb el vector
+
+Exemple: 
+
+3 1 Pràctiques   // Indicaria que la tercera i la primera assignatura que s'ha llegit del fitxer, els seus grups de pràctiques han de ser iguals
+
+Però no em sentia còmode, ja que és "lleig" indicar una assignatura amb un numero en lloc del nom.
+
+Llavors per definir les restriccions, hauria de buscar cada assignatura en el vector. (Cerca lineal) Per cada assignatura que aparegui
+4 vegades (dos per restricció i ha de ser simètric)
+
+Podria haver fet un map<string, int> on la clau és el nom i el valor és la posició. 
+Però hauria d'haver fet cerques logarítmiques a cada restricció. 
+
+Per això he volgut que s'indiqui a després de llegir l'horari. Aixi sé a quina assignatura correspon i quin tipus de classe és.
+
+Llavors, a l'hora d'inserir les assignatura creo el map. 
+
+No he fet el mateix amb el mètode de "Constants.h".
+Ja que m'interessa que la posició que retorna sigui igual a la mida quan té el constructor per defecte, ja que no hi ha un dia en concret. 
+
+Llavors la funció classeDefinida() mira justament això. Que l'index que ha retornat, estigui dins dels limits.
+
+--- Què és el set<string>?
+
+En l'acceptable, busco totes les assignatures del dia. 
+La solapació es produïrà si ambdues son obligatòries i la hora inici d'una classe és abans del començament de l'altra. (Mètode apart)
+
+Ara bé, recordem que si hi ha una restricció, comparteixen dia i hora. 
+
+Per això li he de passar el set de strings. Perquè si l'assignatura que trobo al dia, coincideix amb la restricció, llavors no es considera solapament.
+
+Per cada assignatura que estigui al dia, he de buscar-la al set. 
+Això implica que el cost sigui O(n * log(m)) on n = nombre d'assignatures del dia i m = nombre de restriccions.
+
+
+
+
+--- Descansos
+
+Ja que a 3r es va de tardes, havia de modificar el programa, per indicar que volia un espai per dinar. 
+Pensava que seria més senzill, no ho negaré. 
+Havia de tractar-ho, més o menys, com una altra classe. Però amb un detall: Aquesta es podia modificar les hores. 
+He creat la classe "FranjaHoraria" i he modificat Dia.h perquè és el primer l'objecte que em diu si puc inserir una classe en un dia
+en concret.
+
+Hi han 6 possibilitats (o casos, com indico als comentaris):
+- Cas 1: 
+
+        El descans va abans de l'assignatura que em toqui inserir, però no hi ha solapaments. Perfecte. 
+
+- Cas 2: 
+        El descans va després de l'assignatura que em toqui inserir, però no hi ha solapaments. Perfecte. 
+
+- Cas 3: 
+
+        El descans va abans de l'assignatura que em toqui inserir, i solapa per dalt a l'assignatura que vull inserir.
+        He de modificar l'hora que acaba el descans perquè no solapi amb l'assignatura, però respectant la distància de temps.
+    
+- Cas 4: 
+
+        El descans va després de l'assignatura que em toqui inserir, i solapa per baix a l'assignatura que vull inserir.
+        He de modificar l'hora que comença el descans perquè no solapi amb l'assignatura, però respectant la distància de temps.
+
+- Cas 5: (Impossible fer res)
+
+        El descans es troba en mig d'una assignatura. No puc modificar res perquè no estaria dins dels limits i per
+        molt que ajusti els limits, sempre estarà dins d'aquella assignatura
+
+- Cas 6: 
+        Al revés. El descans és lo suficient ampli perquè hi càpiga una assignatura en aquella franja horària. 
+        He de mirar si puc modificar qualsevol dels dos límits perquè superi els limits de l'assignatura i segueixi respectant 
+        el limit de temps. 
+
+
+
+
+
+

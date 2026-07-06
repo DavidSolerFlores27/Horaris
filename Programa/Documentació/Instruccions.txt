@@ -1,0 +1,329 @@
+// Autor: David Soler Flores
+// Codi UdG: u6106247
+
+
+/// Es recomana llegir aquest fitxer amb atenció per evitar errors d'execució o resultats inesperats.
+/// Abans de res: Ull amb els espais després dels noms. No és el mateix: "Assignatura 1" que "Assignatura 1 "
+
+                *INTRODUCCIÓ*
+
+Programa que busca totes les combinació de grups de teoria, pràctiques i problemes amb l'algorisme backtracking 
+per tal que no es solapin entre elles. 
+
+L'entrada és per teclat. Es recomana tenir redirigir l'entrada un fitxer (el seu format estarà especificat més endevant)
+
+Mostrarà totes les solucions que trobi, i finalment el numero de solucions (combinacions) trobades. 
+Si no hi ha cap combinació, només mostrarà: "TOTAL SOLUCIONS: 0"
+
+                *SOLUCIO*
+
+Es considera solució, la combinació de l'elecció de grups per tal que no hi hagin solapaments entre classes segons l'horari
+que tinguin. 
+
+Una solució és composa de les assignatures amb els seus grups escullits.
+
+                *CLASSES*
+
+Una assignatura es composa de 3 classes diferents: Teoria, pràctiques i problemes. 
+En cada classe, té disponible uns grups diferents. 
+
+Teoria és l'única classe que, en un grup concret, pot disposar de més d'una classe a la setmana. 
+Pràctiques i problemes, si s'escull un grup, només té un dia i una hora en concret. 
+
+                *CLASSES OBLIGATÒRIES*
+
+Pot ser que amb diferentes assignatures, no hi hagi cap solució: Que no hi hagi cap combinació que no tingui cap solapament. 
+Això pot passar si hi han assignatures d'altres anys. 
+Per tant, si no es pot assistir a totes les classes de totes les assignatures, s'ha obert la possibilitat de definir una classe
+no obligatòria. 
+
+Per indicar si una classe és obligatòria (no una assignatura), s'ha de colocar '0' o '1' al costat de [Hores de teoria]
+
+0: No obligatòria
+1: Obligatòria
+
+
+Atenció: Si una classe no és obligatòria i té més d'un grup, però hi ha una altra classe obligatòria que coincideix amb el mateix
+horari, s'inserirà igualment. 
+És per això que el programa mostra totes les solucions possibles. 
+
+
+                *SETMANES A/B*
+
+Algunes de les classes de pràctiques i problemes, no es fan cada setmana.
+O es fan a la setmana A, o a la setmana B o a ambdues.
+
+Pot ser que dues classes diferents, coincideixin el mateix dia, a la mateixa hora, però en setmanes diferents: Per tant, no es
+considerarà solapament. 
+
+A: La classe només s'imparteix a la setmana A.
+B: La classe només s'imparteix a la setmana B.
+AB: La classe s'imparteix tant a la setmana A com B.
+
+
+                *RESTRICCIONS DE GRUPS*
+
+En cas que una assignatura tingui diferents parts, diferents horaris de teoria, pràctiques o problemes però que s'hàgi d'escollir
+un mateix grup, com és el cas de Fisica i Electrònica, es recomana tractar com a dues assignatures indepenents, però amb 
+restriccions de grup.
+
+Amb aquesta condició, l'algorisme backtracking buscarà coincidir el mateix grup. 
+
+Atenció: Això reduirà el nombre de solucions possibles, fins i tot, pot no trobar cap solució. 
+S'ha de tenir en compte que si en l'entrada no s'inclou almenys un grup en comú en dues assignatures amb restriccions, l'algorisme
+no trobarà cap solució.
+
+Les restriccions s'especificaràn en el fitxer d'entrada després d'especificar els grups i horaris de les classes.
+
+S'indicarà el nombre d'assignatures que han de coincidir amb el grup i seguidament els seus noms. 
+
+0: No hi ha cap assignatura que el grup hagi de ser el mateix. No té restriccions.
+[n]: Hi ha n assignatures amb restriccions 
+
+En el fitxer de text, ha de ser simètric. Si l'assignatura A, les seves classes de pràctiques han de ser les mateixes
+que les de l'assignatura B, llavors tant l'assignatura A com la B han d'incloure les restriccions.
+
+
+                *LIMITS I DESCANSOS*
+
+Hi ha l'opció d'indicar si es vol un descansos o limits en una franja horària en concreta. 
+    
+    *LIMITS*
+
+    Serveixen per indicar al programa que l'usuari no vol classes abans d'una hora o després d'una altra. 
+    S'agruparàn per dies. Els grups seràn tants com restriccions diferentes hi hagin. 
+    Si per exemple, els dilluns i dimarts es vol que no hi hagin classes abans de les 11, s'indicarà que hi han 1 grup amb 
+    restriccions.
+
+    S'indica: 
+     - El nombre de grups que hi han (en aquest exemple: 1)
+     - Per cada grup el nombre de dies (2)
+     - I l'hora d'inici i fi
+
+     Exemple:
+
+     1
+     2
+     Dilluns
+     Dimarts
+     11 00
+     18 00
+
+    Per defecte, tots els dies estaran limitats de les 00:00 fins a les 23:59. 
+    No cal especificar-ho. 
+    Si es vol per defecte, només s'ha de posar al nombre de grups un 0 i ja. 
+
+    * DESCANSOS * 
+
+    Al final del fitxer, s'indicarà (amb 1 o 0) si es vol que el programa respecti un descans en una franja horària en concreta. 
+
+    S'indica: 
+    - Si hi ha una franja horària (0 o 1)
+    - Hora inici màxima
+    - Hora final màxima
+    - Duració minima
+
+    El programa anirà buscant en aquesta franja de dues hores, un descans amb la duració marcada. 
+    El descans variarà durant els dies. Potser un dilluns és de 11 a 11:30 i un dimarts és de 11:15 a 11:30, però sempre
+    respectant l'interval i la duració indicada. 
+
+    Si veus que en una configuració indicada no mostra suficients solucions, et recomano ampliar aquests límits. 
+
+
+
+                *FORMAT DEL FITXER*
+
+En la primera linia s'ha d'indicar el nombre d'assignatures, seguidament s'escriuràn cada una d'elles.
+A l'hora de llistar les assignatures:
+
+En una unica linia s'escriu el nom de l'assignatura. Pot contenir espais.
+
+A la linia següent, s'ha d'indicar en la mateixa linia [Grups de teoria] [Hores de teoria] [Obligatòria]
+
+(Si [Grups de teoria] == 0 no cal afegir [Hores de teoria] ni [Obligatòria] ni les hores).
+
+- [Grups de teoria]: Indica quantes opcions té per triar l'algorisme. 
+- [Hores de teoria]: Indica quantes classes setmanals de teoria té aquella assignatura (classes, no hores senceres)
+- [Obligatòria]: 1 si és obligatori assistir, 0 en cas contrari.
+
+Després s'indicaràn totes les hores (sempre i quan [Grups de teoria ]!= 0), indicant en una linia el numero de grup, el dia de la setmana, la hora d'inici i la hora de fi.
+Se suposa que les hores de teoria son tant en setmana A com B.
+
+- [TEORIA]: Numero que indica el grup de la classe.  1 <= [Teoria] <= [Grups de teoria]
+- [Dia]: Dia de la setmana en format text que es fa la classe (Dilluns, Dimarts, Dimecres, Dijous, Divendres)
+- [Hora inici]  [Hora fi]: Hora en format 24h que indica els horaris de la classe. Sense ":". Llancarà una excepció si l'hora no és vàlida
+
+
+En una nova linia ha d'anar el nombre d'assignatures que tenen restriccions.
+- [Numero de restriccions]: 
+                            - 0. No hi ha restriccions. No cal afegir res més, s'avança les opcions de pràctiques
+                            - [n]. Hi ha n restriccions. S'afegiràn el nom de les n assignatura en diferentes linies. 
+
+
+Els apartats de problemes i pràctiques son iguals. 
+S'indica el nombre d'opcions ([Opcions pràctica/problemes]) i si és diferent de 0, s'indica si és obligatori assistir. 
+
+- [Opcions pràctica/problemes]: Numero de grups disponibles
+- [Obligatòria]: Especificat anteriorment
+
+No cal indicar quantes hores setmanals hi ha perquè es suposa que només hi haurà una classe de pràctiques / problemes per setmana.
+Seguidament, s'indicarà tots els grups separats per salts de linia.
+
+- [PRACTICA / PROBLEMA]: Numero identificatiu del grup. 
+- [DIA]: Especificat anteriorment
+- [Hora inici]  [Hora fi]: Especificat anteriorment
+- [A/B]: Indica si és de setmana A (A), setmana B (B) o ambdues (AB) (Per més informació, consultar l'apartat *SETMANES A/B*).
+
+I finalment, el nombre de restriccions, exàctament igual que en apartats anteriors.
+
+Atenció: Si no té classes de teoria, pràctiques o de problemes, no caldrà especificar ni les classes, ni si és obligatori, ni el numero de restriccions.
+
+
+
+Al final de les assignatures, s'indiquen els límits diaris i descansos si es vol. 
+
+
+                *ESQUEMA DEL FITXER*
+
+
+Tens alguns horaris de cursos en concrets. 
+El que et recomano és que copiis les assignatures que vulguis fer en un altre fitxer (exemple info.txt) i allà anar modificant
+els paràmetres que consideris. 
+
+(Els claudàtors només indiquen hi ha una llista. No s'han de posar)
+
+[Numero d'assignatures] {                   
+    [Assignatura]
+
+    [Grups de teoria] [Hores de teoria] [Obligatòria] {
+        [TEORIA] [Dia] [Hora inici Hora fi]
+    } 
+
+    [Numero de restriccions] {
+        [Assignatura]
+    }
+
+    [Opcions pràctica] [Obligatòria]{
+        [PRACTICA] [DIA] [Hora inici Hora fi] [A/B] 
+    }
+
+    [Numero de restriccions]{
+        [Assignatura]
+    }
+
+    [Opcions problemes] [Obligatòria]{
+        [PROBLEMA] [DIA] [Hora inici Hora fi] [A/B] 
+    }
+
+    [Numero de restriccions]{
+        [Assignatura]
+    }
+
+}
+
+
+
+                *ESQUEMA DEL FITXER 2*
+
+[Numero d'assignatures]
+[Assignatura]
+[Grups de teoria] [Hores de teoria] [Obligatòria]
+{[TEORIA] [Dia] [Hora inici Hora fi]} 
+[Numero de restriccions]
+{[Assignatura]}
+[Opcions pràctica] [Obligatòria]
+{[PRACTICA] [DIA] [Hora inici Hora fi] [A/B] }
+[Numero de restriccions]
+{[Assignatura]}
+[Opcions problemes] [Obligatòria]
+{[PROBLEMA] [DIA] [Hora inici Hora fi] [A/B] }
+[Numero de restriccions]
+{[Assignatura]}
+
+
+Exemple: 
+info.txt:
+
+3                                   // Indica que hi ha 3 assignatures
+Assignatura 1                       // Nom de l'assignatura (pot contenir espais)
+2 2 1                               // [2] Dos grups de teoria. [2] Dos classes per setmana. [1] És obligatòria
+1 Dilluns 8 00 10 00                // [1] Grup de teoria 1. [Dilluns] Es fa la classe al dilluns. [10 00] i [12 00] Hora inici i fi
+1 Dimarts 10 00 12 00
+2 Dilluns 10 00 12 00
+2 Dimecres 8 00 10 00
+0                                   // [0] No té restriccions de grup de teoria
+3 1                                 // [3] tres grups de pràctiques disponibles [1] Obligatòria
+1 Dilluns 16 30 17 30 A             // [1] Grup 1 de pràctques. [Dilluns] Dia de la setmana. [16 30] i [17 30] Hora inici i fi. [A] Setmana A 
+2 Dimarts 16 30 17 30 B
+6 Dilluns 16 30 17 30 B
+2                                   // [2] Hi han dos assignatures que els seus grups de pràctica han de coincidir
+Assignatura 2
+Assignatura 3                       
+2 0                                 // [2] Dos grups de teoria disponibles. [0] No obligatòria (es pot solapar amb alguna altra obligatòria)
+1 Divendres 8 00 9 00 AB
+2 Divendres 9 00 10 00 AB
+1
+Assignatura 2                       // [Assignatura 2] El grup de problemes ha de coincidir 
+Assignatura 2                      // Nom de l'assignatura 2. És la següent. No hi han espais entre una assignatura i una altra.
+1 1 1
+1 Dimarts 8 00 9 30 
+0
+2 1                                   // [2] Té dos grups de pràctiques. Encara que en l'assignatura 1 tingui 3 i tingui aquesta assignatura com a restricció, només es necessita un grup en comú perquè pugui trobar una solució
+1 Dilluns 16 30 17 30 A
+2 Dimarts 16 30 17 30 B
+2
+Assignatura 1
+Assignatura 3
+1 0
+1 Divendres 8 00 9 00 AB
+1 
+Assignatura 1
+Assignatura 3                       // Nom de la següent assignatura. 
+1 2 1
+1 Dimecres 9 00 11 00 
+1 Dijous 10 00 12 00
+0
+2 1
+4 Dimarts 8 00 9 00 AB
+1 Dilluns 16 30 17 30 A
+2 
+Assignatura 1
+Assignatura 2
+0                                  // [0] No té problemes. No cal afegir res més.
+2                                 // [2] Té dos grups amb limits diferents de 00:00 a 23:59
+1                                // [1] Afecta a un dia en concret
+Dimarts                           
+8 00                              // Hora minima del dimarts 
+17 00                             // Hora màxima del dimarts   
+2
+Dijous
+Divendres 
+9 00
+19 00
+1                                  // [1] Hi ha un descans indicant
+13 00                              // Hora minima del descans
+15 00                               // Hora màxima
+30                                  // Duració minima de 30 min
+
+
+
+
+
+
+Espero que aquestes instruccions (extenses) t'hagin ajudat. 
+
+
+                *Compilació i execució*
+
+Per compilar i executar el programa, s'ha de situar en la carpta /Programa i accedir a la terminal. 
+        
+- Compilació del codi:
+     g++ -o main *.cpp 
+
+- Execució I (per pantalla):
+    ./main < info.txt
+- Execució II (guardar en fitxer):
+
+    ./main < info.txt > resultat.txt
+  
+                    *****

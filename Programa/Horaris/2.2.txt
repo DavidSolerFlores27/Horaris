@@ -1,0 +1,69 @@
+5
+Computadors
+1 2 1
+1 Dimarts 12 00 14 00   
+1 Dijous 10 00 12 00
+0
+5 1
+1 Dimarts 8 00 10 00 A
+2 Dimarts 8 00 10 00 B
+3 Divendres 8 00 10 00 A
+5 Divendres 10 00 12 00 A
+6 Divendres 10 00 12 00 B
+0 
+2 1
+1 Dimecres 12 00 13 00 AB
+2 Dimecres 13 00 14 00 AB
+0
+Enginyeria del Software
+1 2 1
+1 Dimecres 8 30 10 00 
+1 Divendres 12 00 13 00 
+0
+3 1
+1 Divendres 8 00 10 00 B
+2 Divendres 10 00 12 00 A
+3 Divendres 10 00 12 00 B
+0
+0
+Organització d'Empreses
+1 1 1
+1 Dimecres 10 00 12 00 
+0
+3 1
+1 Dimarts 8 00 10 00 A
+2 Dimarts 8 00 10 00 B
+3 Divendres 10 00 12 00 B
+0
+2 1
+1 Divendres 13 00 14 00 AB
+2 Divendres 14 00 15 00 AB
+0
+Projecte de Programació
+1 1 1
+1 Dijous 8 30 10 00 
+0
+4 1
+1 Dimecres 15 00 17 00 AB
+2 Divendres 8 00 10 00 AB
+4 Divendres 10 00 12 00 AB
+7 Dimarts 8 00 10 00 AB
+0
+0
+Sistemes operatius
+1 1 1
+1 Dimarts 10 00 12 00 
+0
+7 1
+1 Dimecres 15 00 16 00 AB
+2 Dimarts 14 00 15 00 AB
+3 Dimecres 16 00 17 00 AB
+4 Dimecres 17 00 18 00 AB
+5 Dimecres 19 00 20 00 AB
+6 Dilluns 14 00 15 00 AB
+7 Dimarts 15 00 16 00 AB 
+0
+2 1
+1 Dimecres 12 00 13 00 AB
+2 Dimecres 13 00 14 00 AB
+0
