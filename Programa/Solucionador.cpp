@@ -11,6 +11,7 @@ void Solucionador::solucionar(const Solucio & s){
     Solucio sol = s;
     backtracking(sol);
     cout << endl << "TOTAL SOLUCIONS: "<<solus;
+    cerr << endl << "TOTAL SOLUCIONS: "<<solus;
 
 }
 

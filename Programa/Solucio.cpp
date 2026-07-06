@@ -211,8 +211,9 @@ void Solucio::mostrar()const{
         cout << endl;
         
     }
-    cout << string(50, '=')<<endl;
+    cout << string(50, '.')<<endl;
 
     cout << "Descans: "<<endl;
     horari.mostrarDescansos();
+    cout << string(50, '=')<<endl;
 }

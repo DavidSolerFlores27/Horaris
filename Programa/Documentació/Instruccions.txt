@@ -221,6 +221,18 @@ els paràmetres que consideris.
 
 }
 
+[Nombre de grups]{
+    [Dies afectats]
+    {Hora inici}
+    {Hora final}
+}
+[Descans]{
+    {Hora minima}
+    {Hora màxima}
+    {Duració minima}
+}
+
+
 
 
                 *ESQUEMA DEL FITXER 2*
@@ -239,6 +251,15 @@ els paràmetres que consideris.
 {[PROBLEMA] [DIA] [Hora inici Hora fi] [A/B] }
 [Numero de restriccions]
 {[Assignatura]}
+[Nombre de grups]
+{[Dies]}
+[Hora inici]
+[Hora final]
+[Descans]
+[Hora minima]
+[Hora màxima]
+[Duració minima]
+
 
 
 Exemple: 

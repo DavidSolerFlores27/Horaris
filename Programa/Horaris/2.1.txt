@@ -1,0 +1,63 @@
+4
+Sistemes digitals
+1 1 1
+1 Dimarts 12 00 14 00 
+0
+5 1
+1 Dimarts 8 00 10 00 A
+2 Dimarts 8 00 10 00 B
+3 Dijous 8 00 10 00 A
+4 Dijous 8 00 10 00 B
+5 Dijous 10 00 12 00 B
+0
+2 1
+1 Dimarts 8 00 10 00 A
+2 Dimarts 8 00 10 00 B
+0
+Estructures de Dades i Algorísmica
+2 1 1
+1 Dimarts 10 00 12 00 
+2 Dimarts 14 00 16 00
+0
+6 1
+1 Dimarts 14 00 16 00 AB
+2 Dimecres 12 00 14 00 AB
+3 Dijous 8 00 10 00 AB
+6 Dijous 10 00 12 00 AB
+7 Dimecres 14 30 16 30 AB
+8 Dimecres 12 00 14 00 AB
+0
+3 1
+1 Divendres 10 00 12 00 AB
+2 Divendres 8 00 10 00 AB
+4 Divendres 12 00 14 00 AB
+0
+Bases de Dades
+2 2 1
+1 Dimecres 8 00 10 00 
+1 Divendres 8 00 10 00 
+2 Dimecres 10 00 12 00 
+2 Divendres 10 00 12 00 
+0
+4 1
+1 Divendres 14 30 16 30 AB
+2 Dimecres 14 30 16 30 AB
+3 Dijous 8 00 10 00 AB
+6 Dimecres 10 00 12 00 AB
+0
+0
+Estadística
+2 1 1
+1 Dimecres 10 00 12 00 
+2 Dimecres 8 00 10 00 
+0
+4 1
+1 Dimecres 12 00 14 00 A
+2 Dijous 10 00 12 00 B
+3 Dijous 10 00 12 00 A
+4 Dimecres 12 00 14 00 B
+0
+2 1
+1 Divendres 12 00 13 00 AB
+2 Divendres 14 00 15 00 AB
+0

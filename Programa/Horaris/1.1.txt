@@ -1,0 +1,75 @@
+4
+Estructura i Tecnologia de Computadors I
+2 2 1
+1 Dilluns 12 00 14 00 
+1 Dimecres 12 00 13 00
+2 Dimarts 8 00 10 00
+2 Divendres 10 00 11 00
+0
+7 1
+1 Dimecres 8 00 10 00 AB
+2 Divendres 10 00 12 00 AB
+3 Dimarts 10 00 12 00 AB
+4 Dimarts 8 00 10 00 AB
+5 Dilluns 8 00 10 00 AB
+8 Dimarts 15 00 17 00 AB
+12 Dilluns 15 00 17 00 AB
+0
+3 1
+1 Dimecres 13 00 14 00 AB
+2 Divendres 11 00 12 00 AB
+4 Dimecres 13 00 14 00 AB
+0
+Metodologia i Tecnologia de Programació
+2 2 1
+1 Dilluns 10 00 11 00 
+1 Dimecres 10 00 12 00 
+2 Dilluns 12 00 14 00
+2 Dimecres 12 00 13 00 
+0
+6 1
+1 Dimarts 10 00 12 00 AB
+2 Dimarts 10 00 12 00 AB
+3 Dimecres 8 00 10 00 AB
+4 Divendres 10 00 12 00 AB
+11 Dimecres 15 00 17 00 AB
+0
+3 1
+1 Dilluns 11 00 12 00 AB
+2 Dilluns 11 00 12 00 AB
+3 Dimecres 13 00 14 00 AB
+0
+Càlcul
+2 1 1
+1 Dimarts 8 00 10 00 AB
+2 Dimarts 12 00 14 00 AB
+0
+6 1
+1 Divendres 8 00 10 00 B
+2 Divendres 8 00 10 00 A
+3 Divendres 10 00 12 00 B
+4 Divendres 10 00 12 00 A
+5 Divendres 15 00 17 00 B
+6 Divendres 15 00 17 00 A
+0
+2 1
+1 Divendres 13 00 14 00 AB
+2 Divendres 12 00 13 00 AB
+0
+Àlgebra
+2 1 1
+1 Dimarts 12 00 14 00 AB
+2 Dimarts 10 00 12 00 AB
+0
+6 1
+1 Divendres 8 00 10 00 A
+2 Divendres 8 00 10 00 B
+3 Divendres 10 00 12 00 A
+4 Divendres 10 00 12 00 B
+5 Divendres 15 00 17 00 A
+6 Divendres 15 00 17 00 B
+0
+2 1
+1 Divendres 12 00 13 00 AB
+2 Divendres 13 00 14 00 AB
+0

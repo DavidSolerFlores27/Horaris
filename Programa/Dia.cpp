@@ -20,7 +20,7 @@ void Dia::definirDescans(const FranjaHoraria & f){
 void Dia::afegir(const Classe & cl){
     horari.insert(cl);
     FranjaHoraria f = cl.franjaHoraria();
-    if ( cl.obligatoria and FranjaHoraria::hiHaSolapament(f, desc)){
+    if ( cl.obligatoria() and FranjaHoraria::hiHaSolapament(f, desc)){
         hist_desc.push_back({cl, desc});
         ajustarDescans(f);
     }
