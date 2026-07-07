@@ -112,6 +112,9 @@ class Dia {
         /// @brief Mostra per pantalla el descans. Hora inicial, final i duració
         void mostrarDescans()const;
 
+        /// @brief Calcula els minuts que hi han entre cada classe de *this
+        int minutsMig()const;
+
         
 };
 

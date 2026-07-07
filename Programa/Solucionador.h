@@ -26,6 +26,7 @@ class Solucionador {
          */
         void backtracking(Solucio & s);
             int solus; // Numero de solucions trobades
+            Solucio millor;  // Millor solució actual
 
     public:
         /**

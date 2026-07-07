@@ -10,6 +10,8 @@
 Programa que busca totes les combinació de grups de teoria, pràctiques i problemes amb l'algorisme backtracking 
 per tal que no es solapin entre elles. 
 
+També mostra la millor solució: El temps minim buit entre classes
+
 L'entrada és per teclat. Es recomana tenir redirigir l'entrada un fitxer (el seu format estarà especificat més endevant)
 
 Mostrarà totes les solucions que trobi, i finalment el numero de solucions (combinacions) trobades. 

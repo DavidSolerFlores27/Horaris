@@ -10,8 +10,14 @@ void Solucionador::solucionar(const Solucio & s){
 
     Solucio sol = s;
     backtracking(sol);
-    cout << endl << "TOTAL SOLUCIONS: "<<solus;
-    cerr << endl << "TOTAL SOLUCIONS: "<<solus;
+    cout << endl << "TOTAL SOLUCIONS: "<<solus<<endl;
+    cerr << endl << "TOTAL SOLUCIONS: "<<solus<<endl;
+
+    if (solus != 0){
+        cout << "Millor solució: "<<endl;
+        millor.mostrar();
+    }
+
 
 }
 
@@ -28,6 +34,10 @@ void Solucionador::backtracking(Solucio & s){
                 
                    s.mostrar();
                     cout << "\n";
+                    if (s.esMillor(millor)){
+                        millor = s;
+                        millor.calcularTemps();
+                    }
 
             }
 

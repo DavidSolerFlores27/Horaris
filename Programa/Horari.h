@@ -74,6 +74,9 @@ class Horari {
          */
         void mostrarDescansos()const;
 
+        /// @brief Retorna els minuts totals que es troben en mig de dues classes. 
+        int minutsMig()const;
+
 
 };
 

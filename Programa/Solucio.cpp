@@ -10,6 +10,7 @@ Solucio::Solucio(){
 
     assignatura_actual = 0;
     this->clase_actual = 0;
+    this-> temps = 0;
 }
 
 Solucio::Solucio(const vector<Assignatura> & assignatures, const vector<vector<set<string>>> & restriccions, const FranjaHoraria & desc, const vector<FranjaHoraria> & dies ){
@@ -215,5 +216,20 @@ void Solucio::mostrar()const{
 
     cout << "Descans: "<<endl;
     horari.mostrarDescansos();
+     cout << string(50, '.')<<endl;
     cout << string(50, '=')<<endl;
+}
+
+void Solucio::calcularTemps(){
+    this->temps = horari.minutsMig();
+}
+
+
+bool Solucio::esMillor(const Solucio & s)const{
+    if (s.assignatures.empty()){
+        return true;
+    }
+
+    return horari.minutsMig() < s.temps;
+
 }

@@ -27,6 +27,8 @@ class Solucio {
 
         Horari horari;   // Unicament per anotar, desanotar, i acceptable
 
+        int temps;
+
         /// @brief Objecte d'una assignatura simplificat. Només un grup per cada classe 
         struct _Assignatura{
             string nom;
@@ -139,6 +141,12 @@ class Solucio {
 
         /// @brief Mostra la solució: Mostra les combinacions (en cada combinació mostra el grup de teoria, problemes i pràctiques si estàn definits)
         void mostrar()const;
+
+        /// @brief Defineix el temps mort entre hores
+        void calcularTemps();
+
+        /// @brief Indica si *this és millor que \p s comparant el temps mort entre hores. 
+        bool esMillor(const Solucio & s)const;
 
 };
 

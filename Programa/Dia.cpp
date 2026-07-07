@@ -172,3 +172,23 @@ void Dia::mostrarDescans()const{
 }
 
 
+int Dia::minutsMig()const{
+    int compt = 0;
+    if (horari.size() < 2 ){
+        return 0;
+    }
+    set<Classe>::const_iterator it = horari.begin();
+    set<Classe>::const_iterator seguent = horari.begin();
+    seguent++;
+
+    while (seguent != horari.end()){
+        int buit = seguent->franjaHoraria().inicial().resta(it->franjaHoraria().final());
+        if (buit > 0){
+            compt += buit;
+        }
+        it++;
+        seguent++;
+    }
+
+    return compt;
+}

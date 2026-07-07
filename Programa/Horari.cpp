@@ -73,3 +73,13 @@ void Horari::mostrarDescansos()const{
     }
 
 }
+
+
+int Horari::minutsMig()const{
+    int total = 0;
+    for (int i = 0; i<dies.size(); i++){
+        total += setA[i].minutsMig() + setB[i].minutsMig();
+    }
+
+    return total;
+}
