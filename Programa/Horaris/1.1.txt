@@ -32,6 +32,7 @@ Metodologia i Tecnologia de Programació
 2 Dimarts 10 00 12 00 AB
 3 Dimecres 8 00 10 00 AB
 4 Divendres 10 00 12 00 AB
+10 Dimarts 15 00 17 00 AB
 11 Dimecres 15 00 17 00 AB
 0
 3 1
@@ -41,8 +42,8 @@ Metodologia i Tecnologia de Programació
 0
 Càlcul
 2 1 1
-1 Dimarts 8 00 10 00 AB
-2 Dimarts 12 00 14 00 AB
+1 Dimarts 8 00 10 00 
+2 Dimarts 12 00 14 00 
 0
 6 1
 1 Divendres 8 00 10 00 B
@@ -58,8 +59,8 @@ Càlcul
 0
 Àlgebra
 2 1 1
-1 Dimarts 12 00 14 00 AB
-2 Dimarts 10 00 12 00 AB
+1 Dimarts 12 00 14 00 
+2 Dimarts 10 00 12 00 
 0
 6 1
 1 Divendres 8 00 10 00 A
