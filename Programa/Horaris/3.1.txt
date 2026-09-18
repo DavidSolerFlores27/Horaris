@@ -1,7 +1,30 @@
 6
+Arquitectura de Computadors
+1 1 1
+1 Dimecres 17 00 19 30 
+0
+5 1
+1 Dimarts 18 00 20 00 A
+2 Dimarts 18 00 20 00 B
+3 Dimarts 16 00 18 00 B
+4 Dimarts 16 00 18 00 A
+5 Dimarts 14 00 16 00 B
+0
+0
+Enginyeria del Software II
+1 1 1
+1 Divendres 15 30 18 00 
+0
+4 1
+1 Dimarts 16 00 18 00 B
+2 Dimarts 14 00 16 00 A
+3 Dimarts 14 00 16 00 B
+5 Dimarts 12 00 14 00 B
+0
+0
 Fonaments de computació
 2 1 1
-1 Divendres 15 30 18 00
+1 Dilluns 17 30 20 00
 2 Dilluns 11 30 14 00
 0
 5 1
@@ -12,9 +35,20 @@ Fonaments de computació
 5 Dimecres 12 00 14 00 A
 0
 0
+Multimèdia i interfícies
+1 1 1
+1 Dilluns 15 00 17 30 
+0
+4 1
+1 Dimarts 16 00 18 00 A
+2 Dimarts 14 00 16 00 A
+3 Dimarts 14 00 16 00 B
+5 Divendres 11 30 13 30 B
+0
+0
 Projecte de Sistemes operatius
 1 1 1
-1 Divendres 14 30 15 30
+1 Divendres 14 00 15 30
 0
 6 1
 1 Dimecres 11 30 13 30 AB
@@ -30,44 +64,13 @@ Xarxes
 1 Dimecres 14 30 17 00 
 0
 5 1
-1 Dimecres 13 00 14 00 AB
+1 Dimarts 13 00 14 00 AB
 2 Dilluns 14 00 15 00 AB
 4 Divendres 13 00 14 00 AB
 5 Divendres 12 00 13 00 AB
 6 Dimarts 12 00 13 00 AB
 0
 0
-Multimèdia i interfícies
-1 1 1
-1 Dilluns 15 00 17 30 
-0
-4 1
-1 Dimarts 16 00 18 00 A
-2 Dimarts 14 00 16 00 A
-3 Dimarts 14 00 16 00 B
-5 Divendres 11 30 13 30 B
-0
-0
-Enginyeria del Software II
-1 1 1
-1 Divendres 15 30 18 00 
-0
-4 1
-1 Dimarts 16 00 18 00 B
-2 Dimarts 14 00 16 00 A
-3 Dimarts 14 00 16 00 B
-5 Dimarts 12 00 14 00 B
-0
-0
-Arquitectura de Computadors
-1 1 1
-1 Dimecres 17 00 19 30 
-0
-5 1
-1 Dimarts 18 00 20 00 A
-2 Dimarts 18 00 20 00 B
-3 Dimarts 16 00 18 00 B
-4 Dimarts 16 00 18 00 A
-5 Dimarts 14 00 16 00 B
-0
-0
+
+
+

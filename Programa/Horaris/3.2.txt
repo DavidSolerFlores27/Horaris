@@ -1,0 +1,15 @@
+6
+Informàtica Industrial i Robòtica
+1 1 1
+1 Dilluns 15 30 18 00 
+0
+5 1
+1 Dilluns 18 00 20 00 A
+2 Divendres 17 30 19 30 B
+3 Divendres 15 30 17 30 B
+4 Divendres 15 30 17 30 B
+5 Dilluns 18 00 20 00 B
+0
+0
+Intel·ligència Artificial
+1 2 1

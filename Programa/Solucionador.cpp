@@ -13,7 +13,7 @@ void Solucionador::solucionar(const Solucio & s){
     cout << endl << "TOTAL SOLUCIONS: "<<solus<<endl;
     cerr << endl << "TOTAL SOLUCIONS: "<<solus<<endl;
 
-    if (solus != 0){
+    if (solus > 1){
         cout << "Millor solució: "<<endl;
         millor.mostrar();
     }
