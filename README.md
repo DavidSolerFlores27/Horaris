@@ -165,7 +165,7 @@ Divendres
 ---
 ## Compilació i execució
 
-Per compilar i executar el programa, s'ha de situar en la carpta /Programa i accedir a la terminal. 
+Per compilar i executar el programa, s'ha de situar en la carpeta /Programa i accedir a la terminal. 
         
 - Compilació del codi:
      `g++ -o main *.cpp` 
