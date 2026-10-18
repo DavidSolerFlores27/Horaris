@@ -168,10 +168,9 @@ Divendres
 Per compilar i executar el programa, s'ha de situar en la carpta /Programa i accedir a la terminal. 
         
 - Compilació del codi:
-     g++ -o main *.cpp 
+     `g++ -o main *.cpp` 
 
 - Execució I (per pantalla):
-    ./main < info.txt
+    `./main < info.txt`
 - Execució II (guardar en fitxer):
-
-    ./main < info.txt > resultat.txt
+    `./main < info.txt > resultat.txt`
