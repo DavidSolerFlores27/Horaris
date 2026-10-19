@@ -133,7 +133,7 @@ Seguidament, s'indicarà tots els grups separats per salts de linia.
 
 I finalment, el nombre de restriccions, exàctament igual que en apartats anteriors.
 
-Atenció: Si no té classes de teoria, pràctiques o de problemes, no caldrà especificar ni les classes, ni si és obligatori, ni el numero de restriccions.
+> **Atenció**: Si no té classes de teoria, pràctiques o de problemes, no caldrà especificar ni les classes, ni si és obligatori, ni el numero de restriccions.
 
 
 ### Esquema General
