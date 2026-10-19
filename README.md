@@ -54,12 +54,12 @@ Si una assignatura està dividida en diferents parts (per exemple, *Física* i *
 
 ---
 
-## Límits i Descansos
+### Límits i Descansos
 
-###  Límits Horaris
+####  Límits Horaris
 Indiquen al programa les franges horàries on **no** es volen tenir classes (per exemple, no començar abans de les 11:00h). Per defecte, tots els dies estan limitats de `00:00` a `23:59`.
 
-###  Descansos
+####  Descansos
 Es pot especificar una franja horària (per exemple, de dinar) i una duració mínima. El programa buscarà dins d'aquest interval un espai buit per a cada dia que compleixi la duració indicada.
 
 ---
@@ -99,7 +99,7 @@ Es pot especificar una franja horària (per exemple, de dinar) i una duració m�
 ```
 ---
 ### Exemple Completa d'Entrada (info.txt)
-```
+```text
 3                                   // Indica que hi ha 3 assignatures
 Assignatura 1                       // Nom de l'assignatura (pot contenir espais)
 2 2 1                               // [2] Dos grups de teoria. [2] Dos classes per setmana. [1] És obligatòria
@@ -167,10 +167,11 @@ Divendres
 
 Per compilar i executar el programa, s'ha de situar en la carpeta /Programa i accedir a la terminal. 
         
-- Compilació del codi:
+### Compilació del codi:
      `g++ -o main *.cpp` 
 
-- Execució I (per pantalla):
+### Execució I (per pantalla):
     `./main < info.txt`
-- Execució II (guardar en fitxer):
+    
+### Execució II (guardar en fitxer):
     `./main < info.txt > resultat.txt`
