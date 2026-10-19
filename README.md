@@ -1,4 +1,4 @@
-# Generador d'Horaris i Combinador d'Assignatures
+# Generador d'Horaris
 
 **Autor:** David Soler Flores  
 **Codi UdG:** u6106247  
@@ -12,7 +12,7 @@ Aquest programa cerca totes les combinacions de grups de teoria, pràctiques i p
 A més, identifica la millor solució basant-se en la **minimització del temps buit entre classes**.
 
 - **Entrada:** Es realitza per teclat (es recomana redirigir un fitxer de text amb el format especificat).
-- **Eixida:** Mostra totes les solucions trobades i el nombre total de combinacions. Si no n'hi ha cap, mostrarà:  
+- **Sortida:** Mostra totes les solucions trobades i el nombre total de combinacions. Si no n'hi ha cap, mostrarà:  
   `TOTAL SOLUCIONS: 0`
 
 >  **Atenció amb els espais:** Compte amb els espais en blanc al final dels noms. No és el mateix `"Assignatura 1"` que `"Assignatura 1 "`.
@@ -59,7 +59,7 @@ Si una assignatura està dividida en diferents parts (per exemple, *Física* i *
 ####  Límits Horaris
 Indiquen al programa les franges horàries on es vol tenir classes (per exemple, no començar abans de les 11:00h). Per defecte, tots els dies estan limitats de `00:00` a `23:59`.
 
-Si per exemple, els dilluns i dimarts es vol que no hi hagin classes abans de les 11, s'indicarà que hi han 1 grup amb restriccions.
+Si per exemple, els dilluns i dimarts es vol que no hi hagi classes abans de les 11, s'indicarà que hi ha `1` grup amb restriccions.
     
 S'indica: 
   - El nombre de grups que hi han (en aquest exemple: 1)
@@ -95,41 +95,41 @@ A l'hora de llistar les assignatures:
 
 En una unica linia s'escriu el nom de l'assignatura. Pot contenir espais.
 
-A la linia següent, s'ha d'indicar en la mateixa linia [Grups de teoria] [Hores de teoria] [Obligatòria]
+A la linia següent, s'ha d'indicar en la mateixa linia `Grups de teoria` `Hores de teoria` `Obligatòria`
 
-(Si [Grups de teoria] == 0 no cal afegir [Hores de teoria] ni [Obligatòria] ni les hores).
+(Si `Grups de teoria` == `0` no cal afegir `Hores de teoria` ni `Obligatòria` ni les hores).
 
-- [Grups de teoria]: Indica quantes opcions té per triar l'algorisme. 
-- [Hores de teoria]: Indica quantes classes setmanals de teoria té aquella assignatura (classes, no hores senceres)
-- [Obligatòria]: 1 si és obligatori assistir, 0 en cas contrari.
+- `Grups de teoria`: Indica quantes opcions té per triar l'algorisme. 
+- `Hores de teoria`: Indica quantes classes setmanals de teoria té aquella assignatura (classes, no hores senceres)
+- `Obligatòria`: 1 si és obligatori assistir, 0 en cas contrari.
 
-Després s'indicaràn totes les hores (sempre i quan [Grups de teoria ]!= 0), indicant en una linia el numero de grup, el dia de la setmana, la hora d'inici i la hora de fi.
+Després s'indicaràn totes les hores (sempre i quan `Grups de teoria `!= 0), indicant en una linia el numero de grup, el dia de la setmana, la hora d'inici i la hora de fi.
 Se suposa que les hores de teoria son tant en setmana A com B.
 
-- [TEORIA]: Numero que indica el grup de la classe.  1 <= [Teoria] <= [Grups de teoria]
-- [Dia]: Dia de la setmana en format text que es fa la classe (Dilluns, Dimarts, Dimecres, Dijous, Divendres)
-- [Hora inici]  [Hora fi]: Hora en format 24h que indica els horaris de la classe. Sense ":". Llancarà una excepció si l'hora no és vàlida
+- `TEORIA`: Numero que indica el grup de la classe.  `1` <= `Teoria` <= `Grups de teoria`
+- `Dia`: Dia de la setmana en format text que es fa la classe (Dilluns, Dimarts, Dimecres, Dijous, Divendres)
+- `Hora inici`  `Hora fi`: Hora en format 24h que indica els horaris de la classe. Sense ":". Llancarà una excepció si l'hora no és vàlida
 
 
 En una nova linia ha d'anar el nombre d'assignatures que tenen restriccions.
-- [Numero de restriccions]: 
-                            - 0. No hi ha restriccions. No cal afegir res més, s'avança les opcions de pràctiques
-                            - [n]. Hi ha n restriccions. S'afegiràn el nom de les n assignatura en diferentes linies. 
+- `Numero de restriccions`: 
+  - `0`. No hi ha restriccions. No cal afegir res més, s'avança les opcions de pràctiques
+  - `n`. Hi ha `n` restriccions. S'afegiràn el nom de les `n` assignatura en diferentes linies. 
 
 
 Els apartats de problemes i pràctiques son iguals. 
-S'indica el nombre d'opcions ([Opcions pràctica/problemes]) i si és diferent de 0, s'indica si és obligatori assistir. 
+S'indica el nombre d'opcions (`Opcions pràctica/problemes`) i si és diferent de `0`, s'indica si és obligatori assistir. 
 
-- [Opcions pràctica/problemes]: Numero de grups disponibles
-- [Obligatòria]: Especificat anteriorment
+- `Opcions pràctica/problemes`: Numero de grups disponibles
+- `Obligatòria`: Especificat anteriorment
 
 No cal indicar quantes hores setmanals hi ha perquè es suposa que només hi haurà una classe de pràctiques / problemes per setmana.
 Seguidament, s'indicarà tots els grups separats per salts de linia.
 
-- [PRACTICA / PROBLEMA]: Numero identificatiu del grup. 
-- [DIA]: Especificat anteriorment
-- [Hora inici]  [Hora fi]: Especificat anteriorment
-- [A/B]: Indica si és de setmana A (A), setmana B (B) o ambdues (AB) (Per més informació, consultar l'apartat [SETMANES A/B](README.md#SETMANES_A_/_B)).
+- `PRACTICA / PROBLEMA`: Numero identificatiu del grup. 
+- `DIA`: Especificat anteriorment
+- `Hora inici`  `Hora fi`: Especificat anteriorment
+- `A/B`: Indica si és de setmana A (A), setmana B (B) o ambdues (AB) (Per més informació, consultar l'apartat [SETMANES A/B](README.md#setmanes_a_/_b)).
 
 I finalment, el nombre de restriccions, exàctament igual que en apartats anteriors.
 
@@ -169,7 +169,7 @@ Atenció: Si no té classes de teoria, pràctiques o de problemes, no caldrà es
 ```
 
 ### Esquema II
-                *ESQUEMA DEL FITXER 2*
+
 ```text
 [Numero d'assignatures]
 [Assignatura]
