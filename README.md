@@ -52,7 +52,7 @@ Si una assignatura està dividida en diferents parts (per exemple, *Física* i *
 
 >  **Important:** En el fitxer d'entrada, la relació ha de ser **simètrica**. Si l'Assignatura A requereix coincidir amb la B, l'Assignatura B també ha d'incloure la restricció vers la A. En cas de no compartir cap grup en comú, l'algorisme no trobarà cap solució.
 
----
+
 
 ### Límits i Descansos
 
@@ -168,10 +168,10 @@ Divendres
 Per compilar i executar el programa, s'ha de situar en la carpeta /Programa i accedir a la terminal. 
         
 ### Compilació del codi:
-     `g++ -o main *.cpp` 
+     g++ -o main *.cpp
 
 ### Execució I (per pantalla):
-    `./main < info.txt`
+    ./main < info.txt
     
 ### Execució II (guardar en fitxer):
-    `./main < info.txt > resultat.txt`
+    ./main < info.txt > resultat.txt
