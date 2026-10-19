@@ -129,7 +129,7 @@ Seguidament, s'indicarà tots els grups separats per salts de linia.
 - `PRACTICA / PROBLEMA`: Numero identificatiu del grup. 
 - `DIA`: Especificat anteriorment
 - `Hora inici`  `Hora fi`: Especificat anteriorment
-- `A/B`: Indica si és de setmana A (A), setmana B (B) o ambdues (AB) (Per més informació, consultar l'apartat [SETMANES A/B](README.md#setmanes_a_/_b)).
+- `A/B`: Indica si és de setmana A (A), setmana B (B) o ambdues (AB) (Per més informació, consultar l'apartat [SETMANES A/B](https://github.com/DavidSolerFlores27/Horaris/tree/main#setmanes-a--b).
 
 I finalment, el nombre de restriccions, exàctament igual que en apartats anteriors.
 
