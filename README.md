@@ -98,7 +98,7 @@ Es pot especificar una franja horària (per exemple, de dinar) i una duració m�
 [Duració mínima (minuts)]
 ```
 ---
-### Exemple Completa d'Entrada (info.txt)
+### Exemple Complet d'Entrada (info.txt)
 ```text
 3                                   // Indica que hi ha 3 assignatures
 Assignatura 1                       // Nom de l'assignatura (pot contenir espais)
